@@ -11,6 +11,22 @@
     <th>introduction</th>
     <th><%= current_user.introduction %></th>
   </tr>
+  <tr>
+    <th>follows</th>
+    <th>
+      <%= link_to user_following_path(current_user.id) do %>
+        <%= current_user.follower.count %>
+      <% end %>
+    </th>
+  </tr>
+  <tr>
+    <th>followers</th>
+    <th>
+      <%= link_to user_followers_path(current_user.id) do %>
+        <%= current_user.followed.count %>
+      <% end %>
+    </th>
+  </tr>
   </tbody>
 </table>
 <div class="row">
